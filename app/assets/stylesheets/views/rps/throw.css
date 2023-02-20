@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+img {
+  top: 513px;
+  left: 394px;
+  width: 63px;
+  height: 139px;
+  opacity: 1;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+}
+
+.internal-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.center-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.result {
+  font-size: xx-large
+}
+
+a:link {
+  text-decoration: none;
+}
+

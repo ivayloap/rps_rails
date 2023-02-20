@@ -1,0 +1,73 @@
+
+
+h1 {
+  /* Layout Properties */
+  top: 128px;
+  left: 306px;
+  width: 738px;
+  height: 61px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal medium 50px/61px Montserrat;
+  letter-spacing: 0px;
+  color: #36006C;
+  opacity: 1;
+}
+
+#container {
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
+  /* background-color: lightyellow; */
+}
+
+#container > a > div {
+  width: 100px;
+  height: 100px;
+  /* border: 2px dashed red; */
+}
+
+#container > a > img {
+  top: 513px;
+  left: 394px;
+  width: 63px;
+  height: 139px;
+  opacity: 1;
+}
+
+.center-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#description {
+  /* Layout Properties */
+  top: 232px;
+  left: 306px;
+  width: 754px;
+  height: 134px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal 300 21px/32px Roboto;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.54;
+}
+
+#select-your-bet {
+  /* Layout Properties */
+  top: 401px;
+  left: 577px;
+  width: 197px;
+  height: 25px;
+  /* UI Properties */
+  text-align: middle;
+  font: normal normal medium 21px/25px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}

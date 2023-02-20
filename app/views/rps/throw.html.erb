@@ -1,0 +1,25 @@
+<div class="center-screen">
+
+  <h1> WAITING ON SERVERS' RESPONSE</h1>
+
+  <div class="container">
+    <div class="box">
+      <%= image_tag(@your_bet + '.svg') %>
+      Your bet
+    </div>
+
+    <div class="box">
+      <%= image_tag(@server_bet + '.svg') %>
+      Server bet
+    </div>
+  </div>
+
+  <div class="result">
+    <%= 'YOU WON!' if @result == :user %>
+    <%= 'YOU LOST!' if @result == :server %>
+    <%= 'It is a tie.' if @result == :tie %>
+  </div>
+
+<%= button_tag(:type => 'button') do %>
+  <%= link_to 'Try again', start_rps_path %>
+<% end %>
