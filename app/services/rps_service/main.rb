@@ -3,9 +3,10 @@ module RpsService
     attr_accessor :user_bet
 
     RULE_SET = {
-      rock: :scissors,
-      paper: :rock,
-      scissors: :paper
+      rock: [:scissors, :hammer],
+      paper: [:rock],
+      scissors: [:paper],
+      hammer: [:scissors, :paper]
     }
 
     def initialize(user_bet:)
@@ -13,8 +14,8 @@ module RpsService
     end
 
     def result
-      return :user if RULE_SET[user_bet] == generated_bet
-      return :server if RULE_SET[generated_bet] == user_bet
+      return :user if RULE_SET[user_bet].include? generated_bet
+      return :server if RULE_SET[generated_bet].include? user_bet
 
       :tie
     end

@@ -14,8 +14,8 @@ RSpec.describe RpsController, type: :controller do
     let(:result) { "lose" }
 
     before do
-      allow_any_instance_of(RpsService).to receive(:generated_bet).and_return(server_bet)
-      allow_any_instance_of(RpsService).to receive(:result).and_return(result)
+      allow_any_instance_of(RpsService::Main).to receive(:generated_bet).and_return(server_bet)
+      allow_any_instance_of(RpsService::Main).to receive(:result).and_return(result)
       get :throw, params: { id: user_bet }
     end
 

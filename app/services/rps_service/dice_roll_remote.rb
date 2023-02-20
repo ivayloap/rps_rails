@@ -2,14 +2,14 @@ require 'net/http'
 
 module RpsService
   class DiceRollRemote
-    # The dice returns either 1, 2 or 3 in the :result
-    THREE_WAY_DICE_URL = 'https://rolz.org/api/?1d3.json'.freeze
+    # The dice returns either 1, 2, 3 or 4 in the :result
+    FOUR_WAY_DICE_URL = 'https://rolz.org/api/?1d4.json'.freeze
 
     def call
       return unless available?
 
       dice_roll = to_json['result']
-      [:rock, :paper, :scissors][dice_roll - 1]
+      [:rock, :paper, :scissors, :hammer][dice_roll - 1]
     end
 
     def available?
@@ -30,7 +30,7 @@ module RpsService
     end
 
     def uri
-      URI(THREE_WAY_DICE_URL)
+      URI(FOUR_WAY_DICE_URL)
     end
 
   end
