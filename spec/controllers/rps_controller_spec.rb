@@ -12,10 +12,12 @@ RSpec.describe RpsController, type: :controller do
     let(:user_bet) { "rock" }
     let(:server_bet) { "paper" }
     let(:result) { "lose" }
+    let(:rps_service) { instance_double(RpsService::Main) }
 
     before do
-      allow_any_instance_of(RpsService::Main).to receive(:generated_bet).and_return(server_bet)
-      allow_any_instance_of(RpsService::Main).to receive(:result).and_return(result)
+      allow(controller).to receive(:rps_service).and_return(rps_service)
+      allow(rps_service).to receive(:generated_bet).and_return(server_bet)
+      allow(rps_service).to receive(:result).and_return(result)
       get :throw, params: { id: user_bet }
     end
 
