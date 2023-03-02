@@ -4,8 +4,8 @@ class RpsController < ApplicationController
 
   def throw
     @your_bet = params[:id]
-    @server_bet ||= rps_service.generated_bet.to_s
-    @result ||= rps_service.result
+    @server_bet = rps_service.generated_bet.to_s
+    @result = rps_service.result
   end
 
   private

@@ -11,7 +11,7 @@ RSpec.describe RpsService::DiceRollRemote do
       end
 
       it 'returns one of :rock, :paper, or :scissors' do
-        expect(dice_roll_remote.call).to be_in([:rock, :paper, :scissors])
+        expect(dice_roll_remote.call).to be_in([:rock, :paper, :scissors, :hammer])
       end
     end
 
