@@ -24,9 +24,7 @@ RSpec.describe RpsService::DiceRollRemote do
         expect(dice_roll_remote.call).to be_nil
       end
     end
-  end
 
-  describe "#call" do
     it 'returns nil unless available' do
       allow(dice_roll_remote).to receive(:available?).and_return(false)
       expect(dice_roll_remote.call).to be_nil
